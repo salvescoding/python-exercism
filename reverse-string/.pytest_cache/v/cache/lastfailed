@@ -1,0 +1,7 @@
+{
+  "reverse_string_test.py::ReverseStringTest::test_a_capitalized_word": true,
+  "reverse_string_test.py::ReverseStringTest::test_a_palindrome": true,
+  "reverse_string_test.py::ReverseStringTest::test_a_sentence_with_punctuation": true,
+  "reverse_string_test.py::ReverseStringTest::test_a_word": true,
+  "reverse_string_test.py::ReverseStringTest::test_empty_string": true
+}
