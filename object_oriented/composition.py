@@ -4,14 +4,18 @@ from datetime import datetime
 class CSVFormatter(object):
 
     def __init__(self):
-      self.delim = ','
+        self.delim = ','
 
-    def formatter(self,elements):
-        return self.delim.join(elements)
+    def formatter(self, elements):
+        line = []
+        [line.append('"{}"'.format(el)) if self.delim in el else line.append(
+            el) for el in elements]
+        return self.delim.join(line)
+
 
 class LogFormatter(object):
 
-    def formatter(self,text):
+    def formatter(self, text):
         dt = datetime.now()
         date_strf = dt.strftime('%D-%M-%Y %H:%M')
         return "{}:  {}".format(date_strf, text)
@@ -30,7 +34,7 @@ class WriteFile(object):
 
 
 writecsv = WriteFile('text2.csv', CSVFormatter)
-writelog = WriteFile('logo2.text', LogFormatter)
+writelog = WriteFile('logo2.txt', LogFormatter)
 
 
 writecsv.write(['1', '2', '3', '4'])
