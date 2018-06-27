@@ -5,7 +5,4 @@ DNA = {
   'A': 'U'
 }
 def to_rna(dna_strand):
-    result = ''
-    for s in dna_strand:
-        result += DNA.get(s)
-    return result
+    return ''.join(DNA[nucleotide] for nucleotide in dna_strand)
