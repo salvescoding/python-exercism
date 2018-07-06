@@ -16,3 +16,4 @@ print("The aproximations of pi in a float is {0}".format(float(x)))
 # We can limit the denomitar by using the following function
 print(x.limit_denominator(10))
 print("The float would be {0}".format(float(x.limit_denominator(10))))
+
