@@ -102,7 +102,7 @@ class BankAccountTest(unittest.TestCase):
         for _ in range(10):
             self.adjust_balance_concurrently()
 
-    @unittest.skip
+    # @unittest.skip
     def adjust_balance_concurrently(self):
         def transact():
             self.account.deposit(5)
