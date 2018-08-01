@@ -37,11 +37,16 @@ class Allergies():
         while score > 0:
             element = self.ELEMENT_NUM.get(score, self.ELEMENT_NUM[min(
                 self.ELEMENT_NUM.keys(), key=lambda k: abs(k-score))])
+            print(element)
             if score in self.ELEMENT_NUM.keys():
-               new_list.append(self.ELEMENT_NUM[score])
-            else:
-              new_list.append(element)
+                new_list.append(self.ELEMENT_NUM[score])
+            if element not in new_list:
+                new_list.append(element)
+                self.ELEMENT_NUM = {key: val for key, val in self.ELEMENT_NUM.items() if val !=
+                 element}
             score -= self.ELEMENT[element]
+        print(score)
+        print(new_list)
         return new_list
 
 
