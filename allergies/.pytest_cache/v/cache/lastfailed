@@ -1,0 +1,5 @@
+{
+  "allergies_test.py::AllergiesTest::test_allergic_to_everything": true,
+  "allergies_test.py::AllergiesTest::test_allergic_to_lots_of_stuff": true,
+  "allergies_test.py::AllergiesTest::test_ignore_non_allergen_score_parts": true
+}
