@@ -37,7 +37,6 @@ class Allergies():
         while score > 0:
             element = self.ELEMENT_NUM.get(score, self.ELEMENT_NUM[min(
                 self.ELEMENT_NUM.keys(), key=lambda k: abs(k-score))])
-            print(element)
             if score in self.ELEMENT_NUM.keys():
                 new_list.append(self.ELEMENT_NUM[score])
             if element not in new_list:
@@ -51,8 +50,5 @@ class Allergies():
 
 
 
-
-        # check the largest int smaller than the self.score
-        # add the key to the list and decrease the score
 
 
