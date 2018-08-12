@@ -2,7 +2,7 @@ room_mates = {
     'Sergio': 60,
     'Marise': 60,
     'Erika': 35,
-    'Floriane': 25
+    'Floriane': 26
 }
 totals = {
     'Sergio': 0,
@@ -12,7 +12,7 @@ totals = {
 }
 
 days = 60
-bill = 77.32
+bill = 52.89
 
 
 def bill_per_day():
@@ -24,7 +24,7 @@ def calculate_value_to_add(days_to_calc):
 
         Arguments: Days to calculate
     """
-    return round((bill_per_day() * days_to_calc) / len(room_mates), 2)
+    return round((bill_per_day()*days_to_calc) / len(room_mates), 2)
 
 
 def get_roommate_with_lowest_days():
@@ -39,15 +39,19 @@ def remove_roommate_from_dict(roommate):
     """
     room_mates.pop(roommate, None)
 
+def add_value_to_each_roommate(value_to_add, days_to_calc):
+    """ Adds the value to each roommate of the totals dictionary """
+    for key in room_mates:
+        totals[key] += value_to_add
+        room_mates[key] -= days_to_calc
+
 
 while days > 0:
     person, days_to_calc = get_roommate_with_lowest_days()
     value_to_add = calculate_value_to_add(days_to_calc)
-    for key, value in room_mates.items():
-        totals[key] += value_to_add
-        room_mates[key] -= days_to_calc
-    days -= days_to_calc
+    add_value_to_each_roommate(value_to_add, days_to_calc)
     remove_roommate_from_dict(person)
+    days -= days_to_calc
 
 print(totals)
 
